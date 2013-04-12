@@ -1,7 +1,8 @@
-class Tvshow < ActiveRecord::Base
+class Moment < ActiveRecord::Base
 # ASSOCIATIONS
-	has_many :episodes
-	has_many :ranking_boards
+  belongs_to :episode
+  has_many :rankings
+  has_many :ranking_boards, through: :rankings
 
 # VALIDATIONS
 
@@ -19,5 +20,4 @@ class Tvshow < ActiveRecord::Base
 
 # PRIVATE METHODS
 private
-
 end

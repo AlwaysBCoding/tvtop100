@@ -1,13 +1,14 @@
-class Tvshow < ActiveRecord::Base
+class User < ActiveRecord::Base
 # ASSOCIATIONS
-	has_many :episodes
 	has_many :ranking_boards
 
 # VALIDATIONS
-
-# SCOPES
+	validates :email, presence: true
 
 # SPECIAL FEATURES
+	has_secure_password
+
+# SCOPES
 
 # DELEGATIONS
 

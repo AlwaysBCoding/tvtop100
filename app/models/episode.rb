@@ -1,7 +1,7 @@
-class Tvshow < ActiveRecord::Base
+class Episode < ActiveRecord::Base
 # ASSOCIATIONS
-	has_many :episodes
-	has_many :ranking_boards
+  belongs_to :tvshow
+  has_many :moments
 
 # VALIDATIONS
 

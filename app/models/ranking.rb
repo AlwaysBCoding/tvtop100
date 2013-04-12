@@ -1,9 +1,10 @@
-class Tvshow < ActiveRecord::Base
+class Ranking < ActiveRecord::Base
 # ASSOCIATIONS
-	has_many :episodes
-	has_many :ranking_boards
+  belongs_to :moment
+  belongs_to :ranking_board
 
 # VALIDATIONS
+	validates_uniqueness_of :rank, scope: :ranking_board_id
 
 # SCOPES
 
@@ -19,5 +20,4 @@ class Tvshow < ActiveRecord::Base
 
 # PRIVATE METHODS
 private
-
 end
