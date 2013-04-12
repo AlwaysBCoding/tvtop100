@@ -1,0 +1,16 @@
+development:
+  adapter: postgresql
+  database: tvtop100_development
+  host: localhost
+  encoding: UTF8
+  min_messages: WARNING
+
+test: &test
+  adapter: postgresql
+  database: tvtop100_test
+  host: localhost
+  encoding: UTF8
+  min_messages: WARNING
+
+cucumber:
+  <<: *test
