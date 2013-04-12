@@ -1,0 +1,21 @@
+class Tvshow < ActiveRecord::Base
+# ASSOCIATIONS
+
+# VALIDATIONS
+
+# SCOPES
+
+# SPECIAL FEATURES
+
+# DELEGATIONS
+
+# CALLBACKS
+
+# CLASS METHODS
+
+# INSTANCE METHODS
+
+# PRIVATE METHODS
+private
+
+end
