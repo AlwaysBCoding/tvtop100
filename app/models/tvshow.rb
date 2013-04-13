@@ -18,6 +18,9 @@ class Tvshow < ActiveRecord::Base
 # CLASS METHODS
 
 # INSTANCE METHODS
+	def to_param
+		self.slug
+	end
 
 # PRIVATE METHODS
 private

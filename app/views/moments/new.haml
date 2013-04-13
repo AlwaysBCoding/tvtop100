@@ -1,0 +1,23 @@
+%h1 NEW MOMENTS
+
+= form_tag moments_url do
+	%fieldset
+		= label_tag :episode_id, "EPISODE"
+		= text_field_tag :episode_id, "", placeholder: "EPISODE"
+	%fieldset
+		= label_tag :title
+		= text_field_tag :title, "", placeholder: "TITLE"
+	%fieldset
+		= label_tag :analysis
+		= text_field_tag :analysis, "", placeholder: "ANALYSIS"
+	%fieldset
+		= label_tag :media_type
+		= text_field_tag :media_type, "", placeholder: "MEDIA_TYPE"
+	%fieldset
+		= label_tag :media_url
+		= text_field_tag :media_url, "", placeholder: "MEDIA_URL"
+	%fieldset
+		=	label_tag :image
+		= file_field_tag :image
+	%fieldset
+		= submit_tag "SUBMIT"
