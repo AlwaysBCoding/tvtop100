@@ -6,9 +6,10 @@ class Moment < ActiveRecord::Base
 
 # VALIDATIONS
 
-# SCOPES
-
 # SPECIAL FEATURES
+	mount_uploader :image, ImageUploader
+
+# SCOPES
 
 # DELEGATIONS
 
@@ -20,4 +21,5 @@ class Moment < ActiveRecord::Base
 
 # PRIVATE METHODS
 private
+
 end

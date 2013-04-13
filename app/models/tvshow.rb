@@ -4,6 +4,8 @@ class Tvshow < ActiveRecord::Base
 	has_many :ranking_boards
 
 # VALIDATIONS
+	validates :name, presence: true
+	validates :slug, presence: true, uniqueness: true
 
 # SCOPES
 
