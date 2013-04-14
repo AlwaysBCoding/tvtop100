@@ -12,7 +12,7 @@ Tvtop100::Application.routes.draw do
   get "/sign_out" => "sessions#destroy", as: :sign_out
 
   # MOMENTS
-  scope ":slug" do
+  scope ":tvshow" do
     resources :moments
   end
 

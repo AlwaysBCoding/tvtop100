@@ -1,1 +1,4 @@
-%h1 MOMENTS INDEX
+%h1= "Moments of #{@tvshow}"
+
+-@tvshow.moments.each do |moment|
+	%h1= moment.title

@@ -18,9 +18,17 @@ class Tvshow < ActiveRecord::Base
 # CLASS METHODS
 
 # INSTANCE METHODS
-	def to_param
-		self.slug
+	def to_s
+		self.name.titleize
 	end
+
+	def moments
+		Moment.where("episode_id IN (?)", self.episodes.pluck(:id)).to_a
+	end
+
+	# def to_param
+	# 	self.slug
+	# end
 
 # PRIVATE METHODS
 private

@@ -17,4 +17,15 @@ describe Tvshow do
 		it { should validate_uniqueness_of(:slug) }
 	end
 
+	describe "#moments" do
+		it "should return a list of moments associated with the tv show" do
+			mad_men = FactoryGirl.create(:mad_men)
+			episode = mad_men.episodes.create!
+			moment1 = episode.moments.create!
+			moment2 = episode.moments.create!
+
+			([moment1.id, moment2.id] & mad_men.moments.map(&:id)).should eq [moment1.id, moment2.id].sort
+		end
+	end
+
 end
