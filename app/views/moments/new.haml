@@ -3,7 +3,11 @@
 = form_tag moments_url do
 	%fieldset
 		= label_tag :episode_id, "EPISODE"
-		= text_field_tag :episode_id, "", placeholder: "EPISODE"
+		%select{class: "chzn-select", data: {placeholder: "Select an Episode"} }
+			- @tvshow.number_of_seasons.times do |i|
+				%optgroup{label: "Season #{i+1}"}
+					- @episodes.in_season(i+1).each do |episode|
+						%option{value: episode.id}= "#{episode.number}. #{episode.name.titleize}"
 	%fieldset
 		= label_tag :title
 		= text_field_tag :title, "", placeholder: "TITLE"

@@ -4,7 +4,7 @@ class Ranking < ActiveRecord::Base
   belongs_to :ranking_board
 
 # VALIDATIONS
-	validates_uniqueness_of :rank, scope: :ranking_board_id
+	validates :rank, uniqueness: { scope: :ranking_board_id }
 
 # SCOPES
 

@@ -26,6 +26,10 @@ class Tvshow < ActiveRecord::Base
 		Moment.where("episode_id IN (?)", self.episodes.pluck(:id)).to_a
 	end
 
+	def number_of_seasons
+		return episodes.map(&:season).uniq.length
+	end
+
 	# def to_param
 	# 	self.slug
 	# end

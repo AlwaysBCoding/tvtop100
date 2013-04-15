@@ -1,5 +1,5 @@
 class MomentsController < ApplicationController
-	before_action :set_tv_show, only: [:index]
+	before_action :set_tv_show, only: [:index, :new]
 
 	def index
 	end
@@ -8,6 +8,7 @@ class MomentsController < ApplicationController
 	end
 
 	def new
+		@episodes = Episode.of_show(@tvshow.id)
 	end
 
 	def create
@@ -15,7 +16,7 @@ class MomentsController < ApplicationController
 
 private
 	def set_tv_show
-		@tvshow = Tvshow.find_by_slug(params[:tvshow])
+		@tvshow = Tvshow.includes(:episodes, :episodes => :moments).find_by_slug(params[:tvshow])
 	end
 
 end
