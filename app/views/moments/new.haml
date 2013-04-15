@@ -1,27 +1,27 @@
 %h1 NEW MOMENTS
 
-= form_tag moments_url do
+= form_tag "/#{@tvshow.slug}/moments" do
 	%fieldset
 		= label_tag :episode_id, "EPISODE"
-		%select{class: "chzn-select", data: {placeholder: "Select an Episode"} }
+		%select{class: "chzn-select", name: "moment[episode_id]", data: {placeholder: "Select an Episode"} }
 			- @tvshow.number_of_seasons.times do |i|
 				%optgroup{label: "Season #{i+1}"}
 					- @episodes.in_season(i+1).each do |episode|
 						%option{value: episode.id}= "#{episode.number}. #{episode.name.titleize}"
 	%fieldset
 		= label_tag :title
-		= text_field_tag :title, "", placeholder: "TITLE"
+		= text_field_tag :title, "", name: "moment[title]", placeholder: "TITLE"
 	%fieldset
 		= label_tag :analysis
-		= text_field_tag :analysis, "", placeholder: "ANALYSIS"
+		= text_field_tag :analysis, "", name: "moment[analysis]", placeholder: "ANALYSIS"
 	%fieldset
 		= label_tag :media_type
-		= text_field_tag :media_type, "", placeholder: "MEDIA_TYPE"
+		= text_field_tag :media_type, "", name: "moment[media_type]", placeholder: "MEDIA_TYPE"
 	%fieldset
 		= label_tag :media_url
-		= text_field_tag :media_url, "", placeholder: "MEDIA_URL"
+		= text_field_tag :media_url, "", name: "moment[media_url]", placeholder: "MEDIA_URL"
 	%fieldset
 		=	label_tag :image
-		= file_field_tag :image
+		= file_field_tag :image, name: "moment[image]"
 	%fieldset
 		= submit_tag "SUBMIT"

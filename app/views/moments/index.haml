@@ -1,4 +1,11 @@
 %h1= "Moments of #{@tvshow}"
 
--@tvshow.moments.each do |moment|
-	%h1= moment.title
+- @tvshow.number_of_seasons.times do |i|
+	%h1= "Season #{i+1}"
+	- @episodes.in_season(i+1).each do |episode|
+		%h3= "#{episode.number}. #{episode.name.titleize}"
+		.episode-moments
+			- episode.moments.each do |moment|
+				.episode-moment
+					%img{src: moment.image.thumb}
+					%p= moment.title
