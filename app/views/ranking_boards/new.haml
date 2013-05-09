@@ -3,10 +3,10 @@
 	%fieldset
 		%label
 			%span TV SHOW
-			= select_tag :tvshow_id, options_for_select(Tvshow.all.map { |show| [show.name.titleize, show.id]}), prompt: "- Select Show-", name: "ranking_board[tvshow_id]"
+			= select_tag :tvshow_id, options_for_select(Tvshow.all.map { |show| [show.name.titleize, show.id]}), prompt: "- Select Show-", name: "ranking_board[tvshow_id]", class: "chzn-select"
 	%fieldset
 		%label
 			%span CAPACITY
-			= select_tag :capacity, options_for_select([10,25,50,100]), prompt: "- Select Capacity -", name: "ranking_board[capacity]"
+			= select_tag :capacity, options_for_select([10,25,50,100]), prompt: "- Select Capacity -", name: "ranking_board[capacity]", class: "chzn-select"
 	%fieldset.form-actions
 		= submit_tag "Create Ranking Board"

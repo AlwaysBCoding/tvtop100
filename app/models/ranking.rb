@@ -7,6 +7,7 @@ class Ranking < ActiveRecord::Base
 	validates :rank, uniqueness: { scope: :ranking_board_id }
 
 # SCOPES
+	default_scope order("rank asc")
 
 # SPECIAL FEATURES
 

@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0.beta1'
 
 gem 'pg'
-gem 'unicorn'
 gem 'redis'
+gem 'unicorn'
 gem 'haml'
 gem 'haml-rails'
 
@@ -22,6 +22,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'underscore-rails'
+
 gem 'pry-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 

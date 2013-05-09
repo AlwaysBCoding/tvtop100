@@ -1,5 +1,9 @@
-.ranking-board
-	- @rankings.each_with_index do |ranking, index|
-		.moment{data: {ranking: index+1} }
-			%span.ranking-number= index+1
-			%span= ranking.moment.title
+.ranking-board{data: {id: @ranking_board.id} }
+	.moments.sortable
+		- @rankings.each_with_index do |ranking, index|
+			.ranking{data: {ranking: index+1, id: ranking.id} }
+				%span.ranking-number= index+1
+				- if ranking.moment_id.present?
+					%span= ranking.moment.title
+				- else
+					%span.blank-moment BLANK MOMENT

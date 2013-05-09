@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require jquery.ui.sortable
 //= require turbolinks
 //= require chosen
 //= require scripts
