@@ -1,0 +1,5 @@
+.ranking-board
+	- @rankings.each_with_index do |ranking, index|
+		.moment{data: {ranking: index+1} }
+			%span.ranking-number= index+1
+			%span= ranking.moment.title

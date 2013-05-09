@@ -17,6 +17,9 @@ class User < ActiveRecord::Base
 # CLASS METHODS
 
 # INSTANCE METHODS
+	def to_s
+		self.email
+	end
 
 # PRIVATE METHODS
 private

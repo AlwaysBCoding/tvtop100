@@ -14,11 +14,21 @@ class RankingBoard < ActiveRecord::Base
 # DELEGATIONS
 
 # CALLBACKS
+	after_create :initialize_blank_rankings
 
 # CLASS METHODS
 
 # INSTANCE METHODS
+	def to_s
+		"#{self.tvshow} (Top #{self.capacity}) - #{self.user}"
+	end
 
 # PRIVATE METHODS
 private
+	def initialize_blank_rankings
+		self.capacity.times do |index|
+			self.rankings.create rank: index+1
+		end
+	end
+
 end

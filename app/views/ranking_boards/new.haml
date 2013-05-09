@@ -1,0 +1,12 @@
+= form_tag ranking_boards_url do
+	= hidden_field_tag :user_id, @user.id, name: "ranking_board[user_id]"
+	%fieldset
+		%label
+			%span TV SHOW
+			= select_tag :tvshow_id, options_for_select(Tvshow.all.map { |show| [show.name.titleize, show.id]}), prompt: "- Select Show-", name: "ranking_board[tvshow_id]"
+	%fieldset
+		%label
+			%span CAPACITY
+			= select_tag :capacity, options_for_select([10,25,50,100]), prompt: "- Select Capacity -", name: "ranking_board[capacity]"
+	%fieldset.form-actions
+		= submit_tag "Create Ranking Board"

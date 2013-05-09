@@ -16,4 +16,7 @@ Tvtop100::Application.routes.draw do
     resources :moments
   end
 
+  # RANKINGBOARDS
+  resources :ranking_boards
+
 end
