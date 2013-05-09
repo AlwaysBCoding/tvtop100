@@ -18,6 +18,9 @@ class Moment < ActiveRecord::Base
 # CLASS METHODS
 
 # INSTANCE METHODS
+	def to_s
+		self.title
+	end
 
 # PRIVATE METHODS
 private

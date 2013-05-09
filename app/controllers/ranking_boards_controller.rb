@@ -19,6 +19,7 @@ class RankingBoardsController < ApplicationController
 
 	def show
 		@rankings = @ranking_board.rankings
+		@tvshow = @ranking_board.tvshow
 	end
 
 	def edit

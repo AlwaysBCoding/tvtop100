@@ -21,6 +21,9 @@ class Episode < ActiveRecord::Base
 # CLASS METHODS
 
 # INSTANCE METHODS
+	def to_s
+		self.name
+	end
 
 # PRIVATE METHODS
 private
