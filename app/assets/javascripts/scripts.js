@@ -10,6 +10,10 @@ $(function() {
         ranking_board_id = $(".ranking-board").data("id");
         sortables = ui.item.parent().find(".ranking");
         sortorder = [];
+        _.each($(".ranking"), function(ranking, index) {
+          $(ranking).attr("data-ranking", index + 1);
+          return $(ranking).find(".ranking-number").text(index + 1);
+        });
         _.each(sortables, function(item) {
           return sortorder.push($(item).attr("data-id"));
         });
@@ -18,9 +22,6 @@ $(function() {
           url: "/ranking_boards/" + ranking_board_id,
           data: {
             'rankings[]': sortorder
-          },
-          success: function(data) {
-            return console.log(data);
           }
         });
       }

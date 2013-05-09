@@ -23,6 +23,10 @@ class RankingBoard < ActiveRecord::Base
 		"#{self.tvshow} (Top #{self.capacity}) - #{self.user}"
 	end
 
+	def to_json
+		self.rankings
+	end
+
 # PRIVATE METHODS
 private
 	def initialize_blank_rankings

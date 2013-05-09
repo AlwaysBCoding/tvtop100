@@ -27,7 +27,8 @@ class RankingBoardsController < ApplicationController
 	def update
 		params["rankings"].each_with_index { |id, index| Ranking.find(id).update_column(:rank, index+1) }
 		@ranking_board.touch
-		render json: @ranking_board
+		render nothing: true
+		# render json: @ranking_board.to_json
 	end
 
 	def destroy
