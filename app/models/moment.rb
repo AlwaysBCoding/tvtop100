@@ -1,7 +1,7 @@
 class Moment < ActiveRecord::Base
 # ASSOCIATIONS
   belongs_to :episode
-  has_many :rankings
+  has_many :rankings, dependent: :destroy
   has_many :ranking_boards, through: :rankings
 
 # VALIDATIONS

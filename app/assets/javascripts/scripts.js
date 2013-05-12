@@ -3,8 +3,21 @@
 $(function() {
   $(".chzn-select").chosen;
   if ($("body.ranking_boards-show").length > 0) {
-    return $(".sortable").sortable({
+    $(".seasons.accordion").accordion({
+      collapsible: true,
+      active: false,
+      header: ".season",
+      heightStyle: "content"
+    });
+    $(".episodes.accordion").accordion({
+      collapsible: true,
+      active: false,
+      header: ".episode",
+      heightStyle: "content"
+    });
+    $(".rankings.sortable").sortable({
       items: ".ranking",
+      connectWith: ".connected-sortable",
       update: function(event, ui) {
         var ranking_board_id, sortables, sortorder;
         ranking_board_id = $(".ranking-board").data("id");
@@ -25,6 +38,10 @@ $(function() {
           }
         });
       }
+    });
+    return $(".moments.sortable").sortable({
+      items: ".moment",
+      connectWith: ".connected-sortable"
     });
   }
 });

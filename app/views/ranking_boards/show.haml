@@ -1,5 +1,5 @@
 .ranking-board{data: {id: @ranking_board.id} }
-	.rankings.sortable
+	.rankings.sortable.connected-sortable
 		- @rankings.each_with_index do |ranking, index|
 			.ranking{data: {ranking: index+1, id: ranking.id} }
 				%span.ranking-number= index+1
@@ -9,15 +9,15 @@
 					%span.blank-moment BLANK MOMENT
 
 .moments-list
-	.seasons
+	.seasons.accordion
 		- @tvshow.number_of_seasons.times do |index|
 			.season{data: {number: index+1} }
 				%span= "Season #{index+1}"
-				.episodes
-					- @tvshow.episodes.in_season(index+1).each do |episode|
-						.episode
-							%span.episode-name= episode
-							.moments
-								- episode.moments.each do |moment|
-									.moment
-										%span.moment-name= moment
+			.episodes.accordion
+				- @tvshow.episodes.in_season(index+1).each do |episode|
+					.episode
+						%span.episode-name= episode
+					.moments.sortable.connected-sortable
+						- episode.moments.each do |moment|
+							.moment
+								%span.moment-name= moment

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require jquery.ui.sortable
+//= require jquery.ui.accordion
 //= require turbolinks
 //= require chosen
 //= require scripts
